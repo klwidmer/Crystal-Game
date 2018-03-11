@@ -10,16 +10,21 @@
       integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
       crossorigin="anonymous"></script>
 
-  <script src="assets/javascript/game.js"></script>
-
 </head>
 
 <body>
   
 <h1>Crystal Collector</h1>
 
-   <button id ="randomButton" class="btn btn-primary"><h1>?</h1></button>
+<div class="contatiner">
 
+    <button class = "randomButton" class="btn btn-primary"><h1>RandomButton</h1></button>
+    <button class = "crystalButtonOne" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalOne.png" width="50" height="50"alt="crystalOne"></button>
+    <button class = "crystalButtonTwo" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalOne.png" width="50" height="50"alt="crystalTwo"></button>
+    <button class = "crystalButtonThree" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalOne.jpeg" width="50" height="50"alt="crystalThree"></button>
+    <button class = "crystalButtonFour" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalOne.png" width="50" height="50"alt="crystalFour"></button>
+
+  </div>
 
     <div class="container">
       <ul>
@@ -31,10 +36,18 @@
       </ul>
     </div>
 
-    <h2></h2>
-    <h3></h3>
+<div class="container" id = "randomNumber">
+</div>
+
+<div class="container" id = "crystalButtons">
+</div>
+
+
 </body>
+
+<script src="assets/javascript/game.js"></script>
 </html>
+
 
 
 <!-- The player will have to guess the answer, just like in Hangman. This time, though, the player will guess with numbers instead of letters. 
