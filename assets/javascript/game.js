@@ -5,8 +5,10 @@ var crystalTwo = generateRandNum (1,12)
 var crystalThree = generateRandNum (1,12)
 var crystalFour = generateRandNum (1,12)
 var userNumber = 0
-let wins = 0
-let losses = 0
+var randNum = 0
+var wins = 0
+var losses = 0
+
 
  
 
@@ -15,6 +17,7 @@ let losses = 0
         console.log (randNum);
         $("#randomNumber").append("<h2>" + randNum + "</h2>")
         $("#crystalButtons").append("<h2 id='userNumber'>" + userNumber + "</h2>")
+
     });
 
     $(".crystalButtonOne").on("click", function() {
@@ -25,7 +28,6 @@ let losses = 0
     $(".crystalButtonTwo").on("click", function() {
         userNumber += crystalTwo
         $("#userNumber").html(userNumber)
-
     });
 
     $(".crystalButtonThree").on("click", function() {
@@ -38,26 +40,29 @@ let losses = 0
         $("#userNumber").html(userNumber)
     });
 
-    $(".remove").click(function() {
-        alert(this.id);
-      });
-
+    
 function generateRandNum (min, max ){
         return Math.floor((Math.random() * (max-min+1))+ min);
 }
-function winsLosses() {
+
     if (userNumber === randNum) {
-        result = win;
-        win++
-    } else { userNumber < randNum;
-        result = loss;
-        loss++
+        wins++;
+        alert("You Win!");
+        document.getElementById("wins").textContent = wins;
+        resetFunc();
+    } else if (userNumber <= randNum) {
+        losses++;
+        alert("You Lose!");
+        document.getElementById("losses").textContent="You lose!";
+        resetFunc();
     }
-}
+});
 
 
 // if userNumber < less than random number 
 
-})
+// $(".remove").click(function() {
+    //     alert(this.id);
+    //   });
 
 
