@@ -5,64 +5,72 @@ var crystalTwo = generateRandNum (1,12)
 var crystalThree = generateRandNum (1,12)
 var crystalFour = generateRandNum (1,12)
 var userNumber = 0
-var randNum = 0
 var wins = 0
 var losses = 0
-
-
- 
+var crystalNumber = 0
 
     $(".randomButton").on("click", function() {
         var randNum =  generateRandNum(19,120)
-        console.log (randNum);
-        $("#randomNumber").append("<h2>" + randNum + "</h2>")
-        $("#crystalButtons").append("<h2 id='userNumber'>" + userNumber + "</h2>")
+        crystalNumber = randNum;
+        $("#randomNumber").html("<p>" + randNum + "</p>");
+        $("#crystalButtons").html("<p id='userNumber'>" + userNumber + "</p>");
 
     });
 
     $(".crystalButtonOne").on("click", function() {
-      userNumber += crystalOne
-      $("#userNumber").html(userNumber)
+        increaseUserNum(crystalOne);
     });
 
     $(".crystalButtonTwo").on("click", function() {
-        userNumber += crystalTwo
-        $("#userNumber").html(userNumber)
+        increaseUserNum(crystalTwo);
     });
 
     $(".crystalButtonThree").on("click", function() {
-        userNumber += crystalThree
-        $("#userNumber").html(userNumber)
+        increaseUserNum(crystalThree);
+       
     });
 
     $(".crystalButtonFour").on("click", function() {
-        userNumber += crystalFour
-        $("#userNumber").html(userNumber)
+        increaseUserNum(crystalFour);
     });
 
-    
+    // Creates a random number between 19,120
 function generateRandNum (min, max ){
         return Math.floor((Math.random() * (max-min+1))+ min);
 }
 
-    if (userNumber === randNum) {
+    // Used to increase usernumber everytime a crystal button is clicked on
+function increaseUserNum (crystal){
+        userNumber += crystal;
+        $("#userNumber").html(userNumber);
+        verifywin();
+}
+
+    // Resets all the numbers back to zero after a game is complete
+function resetFunc(){
+    crystalOne = generateRandNum (1,12);
+    crystalTwo = generateRandNum (1,12);
+    crystalThree = generateRandNum (1,12);
+    crystalFour = generateRandNum (1,12);
+    userNumber = 0 ;
+    $("#userNumber").html("<p>" + userNumber + "</p>");
+    crystalNumber = 0 ;
+    $("#randomNumber").html("<p>" + crystalNumber + "</p>")
+};
+
+    // This function is used to verify wins and losses
+function verifywin (){
+    if (userNumber === crystalNumber) {
         wins++;
-        alert("You Win!");
         document.getElementById("wins").textContent = wins;
-        resetFunc();
-    } else if (userNumber <= randNum) {
+        resetFunc ();
+    } else if (userNumber > crystalNumber) {
         losses++;
-        alert("You Lose!");
-        document.getElementById("losses").textContent="You lose!";
-        resetFunc();
+        document.getElementById("losses").textContent= losses;
+        resetFunc ();
     }
+ }
 });
 
-
-// if userNumber < less than random number 
-
-// $(".remove").click(function() {
-    //     alert(this.id);
-    //   });
 
 

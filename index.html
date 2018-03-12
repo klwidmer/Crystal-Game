@@ -10,46 +10,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
   
   <div class="jumbotron">
     <h1 class="display-3">Crystal Collector</h1>
-    <div class="container">
-      <ul>
-            <ul>You will be given a random number at the start of the game.</ul>
-            <ul>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</ul>
-            <ul>You win the game by matching your total socre to the random number, you lose the game if your total goes above the random number.</ul>
-            <ul>The value of each crystal is hidden from you until you click on it.</ul>
-            <ul>Each time when the game starts, the game will change the value of each crystal.</ul>
-      </ul>
-    </div>
   </div>
 
 <div class="contatiner">
+  <div class="row">
+      <div class="col-md-4">
+        <div id="border">
+            <p>You will be given a random number at the start of the game.</p>
+            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+            <p>You win the game by matching your total socre to the random number, you lose the game if your total goes above the random number.</p>
+            <p>The value of each crystal is hidden from you until you click on it.</p>
+            <p>Each time when the game starts, the game will change the value of each crystal.</p>
+        </div>
+      </div>
+      </div>
 
-    <button class = "randomButton" class="btn btn-primary"><h2>RandomButton</h2></button>
-    <button class = "crystalButtonOne" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalOne.png" width="50" height="50"alt="crystalOne"></button>
-    <button class = "crystalButtonTwo" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalTwo.png" width="50" height="50"alt="crystalTwo"></button>
-    <button class = "crystalButtonThree" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalThree.jpg" width="50" height="50"alt="crystalThree"></button>
-    <button class = "crystalButtonFour" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalFour.png" width="50" height="50"alt="crystalFour"></button>
-
+      <div class="col-md-8">
+        <div class="row">
+        <div id="bordertwo">
+          <button class = "randomButton" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\randomNumber.png" width="100" height="100"alt="randomNumber"></button>
+          <button class = "crystalButtonOne" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalOne.png" width="50" height="50"alt="crystalOne"></button>
+          <button class = "crystalButtonTwo" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalTwo.png" width="50" height="50"alt="crystalTwo"></button>
+          <button class = "crystalButtonThree" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalThree.jpg" width="50" height="50"alt="crystalThree"></button>
+          <button class = "crystalButtonFour" class="btn btn-primary"><img src="C:\Users\klwid\Desktop\week-4-games\assets\images\crystalFour.png" width="50" height="50"alt="crystalFour"></button>
+          
+          <p>Crystal Number: <span id="randomNumber"></span></p>
+          <p>Your Number: <span id="crystalButtons"></span></p>
+      
+          <p>Wins: <span id="wins"></span></p>
+          <p>Losses: <span id="losses"></span></p>
+          </div>
+        </div>
+      </div>
   </div>
-
-  <br>
-
-<p>Crystal Number: <span id="randomNumber"></span></p>
-<p>Your Number: <span id="crystalButtons"></span></p>
-
-<p>Wins: <span id="wins"></span></p>
-<p>Losses: <span id="losses"></span></p>
- 
+</div>
 
 </body>
 
 <script src="assets/javascript/game.js"></script>
+
 </html>
 
 
