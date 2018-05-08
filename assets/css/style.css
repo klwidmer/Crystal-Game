@@ -20,11 +20,10 @@ h1 {
 body {
      margin-left: 2em;
     margin-right: 2em;
-    background: url(C:\Users\klwid\Desktop\week-4-games\assets\images\crystalThree.jpg);
+    background: url(assets\images\crystalThree.jpg);
 }
 
 #border {
-    width: 1837px;
     background-color: rgb(255, 255, 255);
     border: 10px solid #128494;
     margin: 10px;
@@ -32,7 +31,6 @@ body {
 }
 
 #bordertwo{
-    width: 700px;
     background-color: rgb(255, 255, 255);
     border: 10px solid #128494;
     margin: 10px;

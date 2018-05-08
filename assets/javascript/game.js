@@ -1,5 +1,6 @@
 $ (document).ready(function() {
 
+    
 var crystalOne = generateRandNum (1,12)
 var crystalTwo = generateRandNum (1,12)
 var crystalThree = generateRandNum (1,12)
@@ -9,28 +10,28 @@ var wins = 0
 var losses = 0
 var crystalNumber = 0
 
-    $(".randomButton").on("click", function() {
+    $("#randomButton").on("click", function() {
         var randNum =  generateRandNum(19,120)
         crystalNumber = randNum;
-        $("#randomNumber").html("<p>" + randNum + "</p>");
-        $("#crystalButtons").html("<p id='userNumber'>" + userNumber + "</p>");
+        $("#randomNumber").html(randNum);
+        $("#crystalButtons").html(userNumber);
 
     });
 
-    $(".crystalButtonOne").on("click", function() {
+    $("#crystalButtonOne").on("click", function() {
         increaseUserNum(crystalOne);
     });
 
-    $(".crystalButtonTwo").on("click", function() {
+    $("#crystalButtonTwo").on("click", function() {
         increaseUserNum(crystalTwo);
     });
 
-    $(".crystalButtonThree").on("click", function() {
+    $("#crystalButtonThree").on("click", function() {
         increaseUserNum(crystalThree);
        
     });
 
-    $(".crystalButtonFour").on("click", function() {
+    $("#crystalButtonFour").on("click", function() {
         increaseUserNum(crystalFour);
     });
 
@@ -42,7 +43,7 @@ function generateRandNum (min, max ){
     // Used to increase usernumber everytime a crystal button is clicked on
 function increaseUserNum (crystal){
         userNumber += crystal;
-        $("#userNumber").html(userNumber);
+        $("#crystalButtons").html(userNumber);
         verifywin();
 }
 
@@ -53,9 +54,9 @@ function resetFunc(){
     crystalThree = generateRandNum (1,12);
     crystalFour = generateRandNum (1,12);
     userNumber = 0 ;
-    $("#userNumber").html("<p>" + userNumber + "</p>");
-    crystalNumber = 0 ;
-    $("#randomNumber").html("<p>" + crystalNumber + "</p>")
+    $("#crystalButtons").html(userNumber);
+    crystalNumber = generateRandNum(19,120);
+    $("#randomNumber").html(crystalNumber);
 };
 
     // This function is used to verify wins and losses
